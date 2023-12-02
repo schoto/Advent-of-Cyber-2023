@@ -220,3 +220,6 @@ Ta-dah! Our first line chart.
 
 Okay, great! We've learned how to process data using Pandas and Matplotlib. Continue onto the "Workbook.ipynb" Notebook located at ```4_Capstone``` on the VM. Remember, everything you need to answer the questions below has been provided in the Notebooks on the VM. You will just need to account for the new dataset "network_traffic.csv".
 
+**Q/A**
+
+![TryHackMe-Advent-of-Cyber-2023](https://github.com/schoto/Advent-of-Cyber-2023/assets/69323411/d424da1f-c31b-400f-8c74-a2328b479689)
