@@ -154,3 +154,4 @@ Now, we can retrieve the backup tapes, which we’ll soon use to rebuild our sys
 
 **Q/A**
 
+![answa](https://github.com/schoto/Advent-of-Cyber-2023/assets/69323411/5457e2b3-0d15-46a7-84e3-94b451f43910)
