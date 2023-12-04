@@ -188,3 +188,8 @@ The breach underscores the dual nature of such tools -- while invaluable for sec
 
 **Q/A**
 
+![meowowowow](https://github.com/schoto/Advent-of-Cyber-2023/assets/69323411/8e4b8c61-265d-4411-ba8f-7d754b60fb52)
+
+![answa](https://github.com/schoto/Advent-of-Cyber-2023/assets/69323411/4c61220b-b44f-4778-82bf-949520df71ab)
+
+
