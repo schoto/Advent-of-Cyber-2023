@@ -115,3 +115,4 @@ As the unsuspecting elf hurries out of the room, the giant snowman turns around 
 
 **Q/A**
 
+![thm](https://github.com/schoto/Advent-of-Cyber-2023/assets/69323411/47f50783-4508-4b10-b28f-4869427e6903)
