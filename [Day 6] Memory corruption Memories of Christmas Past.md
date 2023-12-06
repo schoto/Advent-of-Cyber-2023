@@ -93,3 +93,4 @@ Rename yourself to ```AAAABBBBCCCCDDDD``` (16 characters).
 
 **Q/A**
 
+![thmblahblahblah](https://github.com/schoto/Advent-of-Cyber-2023/assets/69323411/6f49663d-dc5e-419d-bb44-552523c2d81a)
