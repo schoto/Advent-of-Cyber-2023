@@ -94,3 +94,4 @@ IMPORTANT: Please use Hex mode instead of Text mode to avoid crashing FTK Imager
 
 **Q/A**
 
+![meow](https://github.com/schoto/Advent-of-Cyber-2023/assets/69323411/3a76b8cc-068d-4eb9-868c-da3496382156)
