@@ -56,4 +56,41 @@ FTK Imager's interface is intuitive and user-friendly. It displays an "x" icon n
 
 ![evidence](https://github.com/schoto/Advent-of-Cyber-2023/assets/69323411/82637b4c-f273-4b4f-b493-c5e4e00f02eb)
 
+**FTK Imager: Previewing Modes**
+
+FTK Imager presents three distinct modes for displaying file content, arranged sequentially from left to right, each represented by icons enclosed in yellow:
+
+- Automatic mode: Selects the optimal preview method based on the file type. It utilises Internet Explorer (IE) for web-related files, displays text files in ASCII/Unicode, and opens unrecognised file types in their native applications or as hexadecimal code.
+- Text mode: Allows file contents to be previewed as ASCII or Unicode text. This mode is useful for revealing hidden text and binary data in non-text files.
+- Hex mode: Displays files in hexadecimal format, providing a detailed view of file data at the binary (or byte) level.
+
+![tree](https://github.com/schoto/Advent-of-Cyber-2023/assets/69323411/90885749-5454-4393-ac80-04e30cb90482)
+
+Use ```Ctrl + F``` to search for specific text within a file while in either text or hex preview mode.
+
+![imager](https://github.com/schoto/Advent-of-Cyber-2023/assets/69323411/2af5a237-b1e2-4fe4-8056-fdac92cdd3f9)
+
+**FTK Imager: Recovering Deleted Files and Folders**
+
+To view and recover deleted files, expand directories in the File List pane and Evidence Tree pane. Right-click and select ```Export Files``` on individual files marked with an "x" icon or on entire directories/devices for bulk recovery of files (whether deleted or not).
+
+![export](https://github.com/schoto/Advent-of-Cyber-2023/assets/69323411/f9b6f222-10fc-4485-99c0-bf2cd5f76598)
+
+![export1](https://github.com/schoto/Advent-of-Cyber-2023/assets/69323411/77d3d536-71d8-449d-980a-0d286b50da57)
+
+**FTK Imager: Verifying Drive/Image Integrity**
+
+To verify the integrity of a drive/image, click on it from the Evidence Tree pane and navigate to ```File > Verify Drive/Image``` to obtain its MD5 and SHA1 hashes.
+
+![ftx](https://github.com/schoto/Advent-of-Cyber-2023/assets/69323411/ed8d6ef1-8d38-4671-b707-071f6967faa7)
+
+![ftx1](https://github.com/schoto/Advent-of-Cyber-2023/assets/69323411/9ee9df15-bc30-4e39-a67c-89f5aa684b50)
+
+**Practical Exercise With FTK Imager**
+
+Use what you have learned today to analyse the contents of the USB drive and answer the questions below.
+
+IMPORTANT: Please use Hex mode instead of Text mode to avoid crashing FTK Imager when processing files as text.
+
+**Q/A**
 
