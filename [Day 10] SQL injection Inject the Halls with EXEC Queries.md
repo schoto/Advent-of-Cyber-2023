@@ -342,3 +342,4 @@ Stored procedures: Use stored procedures to encapsulate your SQL logic whenever 
 
 **Q/A**
 
+![gffffdd](https://github.com/schoto/Advent-of-Cyber-2023/assets/69323411/05e177af-1cc3-4904-8921-8aed0dd077dd)
