@@ -233,3 +233,4 @@ In the chilly world of cyber security, less is often more!
 
 **Q/A**
 
+![thm](https://github.com/schoto/Advent-of-Cyber-2023/assets/69323411/1a3d486d-c2fa-43f0-be9e-4043cdfefa15)
