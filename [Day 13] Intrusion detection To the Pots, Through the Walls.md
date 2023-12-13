@@ -229,3 +229,6 @@ After learning about firewalls and honeypots, Van Twinkle puts his knowledge int
 
 **Q/A**
 
+![thmhghghg](https://github.com/schoto/Advent-of-Cyber-2023/assets/69323411/cac11718-c8d1-4f2b-892f-3949f1f2ce29)
+
+
