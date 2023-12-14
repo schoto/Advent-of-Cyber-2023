@@ -316,3 +316,4 @@ The same power that allows machine learning to be used for defence means that it
 
 **Q/A**
 
+![neural](https://github.com/schoto/Advent-of-Cyber-2023/assets/69323411/4a04fc8a-2cda-4a80-8788-57885c690b41)
