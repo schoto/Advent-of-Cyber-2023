@@ -305,3 +305,4 @@ Deploy the model into production.
 
 **Q/A**
 
+![spam8](https://github.com/schoto/Advent-of-Cyber-2023/assets/69323411/e6604999-262e-454c-8d48-b17c52ee329f)
