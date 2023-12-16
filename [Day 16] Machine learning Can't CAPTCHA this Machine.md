@@ -333,3 +333,4 @@ Now that you’ve had a taste of what is possible, the sky’s the limit!
 
 **Q/A**
 
+![answers](https://github.com/schoto/Advent-of-Cyber-2023/assets/69323411/b4cd13e5-c8f3-4fba-8600-978e6dfc70af)
