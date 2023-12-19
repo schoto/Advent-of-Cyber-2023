@@ -288,3 +288,4 @@ Given the nature of the incident threat, along with the current news of the acqu
 
 **Q/A**
 
+![answers](https://github.com/schoto/Advent-of-Cyber-2023/assets/69323411/d4b33dd5-b0d7-4895-9db6-d91e35344efa)
