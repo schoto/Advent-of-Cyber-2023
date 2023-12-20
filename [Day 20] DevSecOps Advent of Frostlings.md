@@ -86,3 +86,104 @@ What Is Going On Here?
 Let's check the job logs. Job logs show all the workflows triggered and jobs that have run or are running. On the same menu on the left-hand side, select "Jobs" from the dropdown menu in CI/CD:
 
 <img width="234" alt="jobs" src="https://github.com/schoto/Advent-of-Cyber-2023/assets/69323411/1fccb424-5b73-487d-9aaf-63ea52858e5f">
+
+Check the jobs that have been executed. At first glance, the testing jobs have been running, just like the detective said. However, teams have complained that the production site has been acting up. The testing environment shouldn't be affecting the website in the production environment.
+
+In the "rules" section of the “.gitlab-ci.yml” file, the branch shouldn't trigger a job if the branch is not main.
+
+![public](https://github.com/schoto/Advent-of-Cyber-2023/assets/69323411/8ea713ea-16a3-4977-92cd-57781c2579a2)
+
+Branches are ways to track changes and work; they are copies of the repository where developers and engineers work on changes. When they are ready, they merge the branch (in other words, they add their code to the main branch, which is the version the workflows use to build the site).
+
+Checking the calendar site
+
+Let's take a look at the Advent Calendar website. Navigate to the machine's IP address and type the port you saw in the docker command run in the config file:
+
+![frostling](https://github.com/schoto/Advent-of-Cyber-2023/assets/69323411/b94e5466-5e7d-4660-b38e-9be4bea2cee9)
+
+Oh no! It's been defaced, possibly by Frostlings! The detective was right. Let's check the pipeline logs! Navigate to the "Pipelines" section from the CI/CD dropdown on the left-hand side. You should see a view like this:
+
+![update](https://github.com/schoto/Advent-of-Cyber-2023/assets/69323411/435a78ff-8649-4151-84e4-98ac62ef3080)
+
+This section shows all the pipelines triggered. Pipelines are grouped jobs; they run based on the config-ci.yml file declarations we looked at before declaring the jobs to be run. Selecting any of the pipelines and clicking on the "passed" box should take you to the individual pipeline view.
+
+![passed](https://github.com/schoto/Advent-of-Cyber-2023/assets/69323411/be699c67-bcef-4f7b-b4a3-2097a270ecfa)
+
+It should look like this:
+
+![install](https://github.com/schoto/Advent-of-Cyber-2023/assets/69323411/e163dcea-8ae6-422a-b01f-b44eab2de47a)
+
+Click on a "test" job, and be wary of the arrow button to re-run the job (nothing bad should happen; feel free to try). After clicking "test, " it should take you to the build logs. You should see who triggered the job and what is attempting to run. Investigate the logs. There has been a lot of "testing" activity. ﻿This type of behaviour is not expected. At first glance, we can see commands and behaviour unrelated to the Advent Calendar built for Best Festival Company. An incident and investigation need to be open. 
+
+![noir](https://github.com/schoto/Advent-of-Cyber-2023/assets/69323411/32b25df3-72ee-4a5c-8798-f3ba788b4704)
+
+Incident
+
+As discussed in the previous section, new code changes have been implemented. Based on the discussions in the merge requests, some jobs have been approved without review and merged by Frostlino. He seems to have many privileges. Are they exploiting its power? That's up to Frost-eau to decide. For now, let's focus on mitigation. We can see malicious code has been added as part of the test, and the rules have been changed so that the commands in "Test" are the ones that go into production.
+
+This looks highly suspicious! Let's break down what's happening. We can see that various commands are being executed, including the following:
+
+1. Print User Information:
+
+   - whoami: Prints the username of the current user executing the script.
+
+   - pwd: Prints the current working directory.
+
+2. List Directory Contents:
+
+   -ls -la: Lists detailed information about files and directories in the current location.
+
+   - ls -la ./public/: Lists detailed information about files and directories within the 'public' directory.
+
+3. HTML Content Generation:
+
+   - An HTML file is dynamically generated using an echo command. This file now contains an image of a defaced Advent Calendar.
+
+4. Docker Container Deployment:
+
+   - The script uses Docker to deploy a containerised instance of the Apache web server (httpd:latest image) named whatever is passed to $CONTAINER_NAME. The container is mapped to port 9081 on the host, and the ./public/ directory is mounted to /usr/local/apache2/htdocs/ within the container.
+
+In conclusion, the "Test" step performs various tasks to deface the calendar; it looks like Frostlino has joined Tracy McGreedy's scheme to damage Best Festival Company's reputation by defacing our Advent Calendar! 
+
+![re po](https://github.com/schoto/Advent-of-Cyber-2023/assets/69323411/95320d92-ae51-490d-be6f-ca32a008484d)
+
+You should now be able to see the commit history. Like in the image below:
+
+![upppp](https://github.com/schoto/Advent-of-Cyber-2023/assets/69323411/1b0b503c-7418-4480-b694-50dd7e11eb5e)
+
+Find the commit with the original code, which Delf Lead should have added. After clicking the commit, you can select the view file button on the top right corner to copy the contents.
+
+![main](https://github.com/schoto/Advent-of-Cyber-2023/assets/69323411/047380f2-ae7b-4316-b5ca-b1e803d59ca3)
+
+Go back to the repository. Click on the configuration file..gitlab-ci.yaml.
+
+Then, click the "Edit" button.
+
+![yupi](https://github.com/schoto/Advent-of-Cyber-2023/assets/69323411/3f8440a6-05db-472b-9333-7807413f8e74)
+
+Edit the file and add the correct code copied from the commit we identified earlier.
+
+Click commit and wait for the job to finish! Everything should go back to normal! 
+
+To remediate these types of attacks, we can do several things:
+
+Preventing unauthorised repository changes: Enforce protected branches to prevent unauthorised users from pushing changes to branches. Add a protected branch by navigating to the repository's Settings > Repository. In the "Protected Branches" section, click expand. Scroll down and change the "Allowed to push" to no one. Everyone must open a merge request and get the code reviewed before pushing it to the main branch.
+
+![branch](https://github.com/schoto/Advent-of-Cyber-2023/assets/69323411/4f484fe4-eec3-45e3-a167-ef9251a3aa7d)
+
+Artifact management: Configure artifact expiration settings to limit the retention of artifacts. If an attempt like this happens again, the changes and files created will not be saved, and there will be no risk of web servers running artifacts! 
+
+Pipeline visualisation: Use pipeline visualisation to monitor and understand pipeline activity. Similar to how we carried out the investigation, you can access the pipeline visualisation from the "pipeline view" in your GitLab project.
+
+Static analysis and linters: A DevSecOps team can implement static code analysis and linting tools in a CI/CD pipeline. GitLab has built-in SAST you can use! 
+
+Access control: Ensure that access control is configured correctly. Limit access to repositories and pipelines. Only admins can do this, but this is something the AntartiCrafts team should do. They need to kick Frostlino out of the project as well!
+
+Regular security audits: Review your .gitlab-ci.yml files regularly for suspicious or unintended changes. That way, we can prevent projects like the Advent Calendar project from being tampered with again!
+
+Pipeline stages: Only include the necessary stages in your pipeline. Remove any unnecessary stages to reduce the attack surface. If you see a test running unnecessary commands or stages, always flag it!
+
+We have gathered remediation steps, which will be passed on and communicated to the Best Festival Company security squad; well done, team! We have restored the Advent Calendar and can now continue with celebrations for this holiday season!
+
+**Q/A**
+
