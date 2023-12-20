@@ -187,3 +187,4 @@ We have gathered remediation steps, which will be passed on and communicated to 
 
 **Q/A**
 
+![TryHackMe-Advent-of-Cyber-2023](https://github.com/schoto/Advent-of-Cyber-2023/assets/69323411/fc6b3f9e-ddb7-4a1c-9d74-fe164f46f9cd)
