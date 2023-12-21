@@ -99,3 +99,4 @@ We can check the status and output of the build from Jenkins by navigating to ht
 
 **Q/A**
 
+![corr](https://github.com/schoto/Advent-of-Cyber-2023/assets/69323411/57e374f6-3dd7-48ff-b261-ef129fa43019)
