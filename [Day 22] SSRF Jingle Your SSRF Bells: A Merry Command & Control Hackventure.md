@@ -92,3 +92,4 @@ To prevent SSRF exploitation, the following mitigations are suggested:
 
 **Q/A**
 
+![answers](https://github.com/schoto/Advent-of-Cyber-2023/assets/69323411/4c72d483-9d72-47b2-8b58-3e74d19d46b2)
