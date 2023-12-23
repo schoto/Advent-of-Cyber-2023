@@ -118,3 +118,4 @@ Coercing authentication with files is an incredible technique to have in your re
 
 **Q/A**
 
+![answers](https://github.com/schoto/Advent-of-Cyber-2023/assets/69323411/dbd34f59-75a2-4bcf-a333-565c7eed674b)
