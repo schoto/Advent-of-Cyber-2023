@@ -166,3 +166,24 @@ We have already created a case in Autopsy, so you don’t have to create a new o
 
 **Q/A**
 
+One of the photos contains a flag. What is it?
+
+![digital](https://github.com/schoto/Advent-of-Cyber-2023/assets/69323411/9e7e2042-f679-494d-a7c4-e3c0e07cac23)
+
+What name does Tracy use to save Detective Frost-eau’s phone number?
+
+```THM{DIGITAL_FORENSICS}```
+
+What name does Tracy use to save Detective Frost-eau’s phone number?
+
+![contact](https://github.com/schoto/Advent-of-Cyber-2023/assets/69323411/25413fd2-9acc-45e9-8966-485e57ea5be9)
+
+```detective carrot-nose```
+
+One SMS exchanged with Van Sprinkles contains a password. What is it?
+
+![password](https://github.com/schoto/Advent-of-Cyber-2023/assets/69323411/fcca0c77-dea5-468c-94f4-fc58759940d6)
+
+```chee7AQu```
+
+
