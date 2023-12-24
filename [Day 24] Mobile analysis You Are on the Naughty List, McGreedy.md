@@ -186,4 +186,30 @@ One SMS exchanged with Van Sprinkles contains a password. What is it?
 
 ```chee7AQu```
 
+<h3>The Confrontation Jolly Judgment Day</h3>
 
+McSkidy's team has achieved something remarkable. They have meticulously gathered a trove of evidence, enough to confront the elusive McGreedy about his nefarious activities.
+
+Now, the moment of truth has arrived. In this gripping conclusion to our adventure, you'll assist in presenting the hard-earned evidence before Santa himself, the one who oversees all. Each piece of evidence you help unveil will bring McGreedy closer to facing the consequences of his actions.
+
+As you step into this pivotal courtroom showdown, may your wit, courage, and the skills you've honed guide you. Good luck – the quest for justice rests in your hands!
+
+Jolly Judgement Day instructions: 
+
+Pick evidence that matches Santa’s question.
+
+You can select up to 3 evidence.
+
+You need to achieve a Conviction score higher than 100 to win.
+
+You will lose the game if Santa loses all Patience.
+
+You earn Conviction points by answering questions about evidence correctly. If you choose the wrong evidence or give incorrect answers, Santa gets impatient. However, if you select the right evidence and answer questions correctly, Santa becomes more patient again.
+
+**Q/A**
+
+What is the final flag?
+
+![santa](https://github.com/schoto/Advent-of-Cyber-2023/assets/69323411/b56e69a6-a4d0-4a06-8958-4083f3215166)
+
+```THM{YouMeddlingKids}```
